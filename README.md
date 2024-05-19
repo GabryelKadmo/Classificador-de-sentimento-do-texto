@@ -20,4 +20,5 @@ Instale as dependências:
 - pip install transformers torch
 
 ## Por fim execute o comando: **streamlit run app.py**
-![Imagem](https://github.com/GabryelKadmo/Projeto-I.A/assets/65462410/198a6e6f-5f43-4135-8429-140a77d79f08)
+
+![image](https://github.com/GabryelKadmo/Projeto-I.A/assets/65462410/929f84fb-cb74-48ac-91d4-14c7086f9c4d)
