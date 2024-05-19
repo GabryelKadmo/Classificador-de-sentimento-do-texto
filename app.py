@@ -2,6 +2,9 @@ import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification
 from torch.nn.functional import softmax
 import torch
+from transformers import AutoConfig
+
+config = AutoConfig.from_pretrained("bert-base-cased")
 
 # Carregar o modelo pré-treinado e o tokenizer
 st.set_page_config(page_title="Classificador de Sentimentos", page_icon=":speech_balloon:", layout="centered")
