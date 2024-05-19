@@ -4,6 +4,7 @@ from torch.nn.functional import softmax
 import torch
 
 # Carregar o modelo pré-treinado e o tokenizer
+st.set_page_config(page_title="Classificador de Sentimentos", page_icon=":speech_balloon:", layout="centered")
 model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForSequenceClassification.from_pretrained(model_name)
@@ -22,8 +23,5 @@ def classify_sentiment(text):
 st.title('Classificador de Sentimentos')
 user_input = st.text_area("Digite uma frase para analisar o sentimento:", value="", height=150)
 if st.button('Classificar Sentimento'):
-    if user_input.strip():
-        sentiment = classify_sentiment(user_input)
-        st.write(f"O sentimento desta frase é: **{sentiment}**")
-    else:
-        st.write("Por favor, digite uma frase para analisar.")
+    sentiment = classify_sentiment(user_input)
+    st.write(f"O sentimento desta frase é: **{sentiment}**")
