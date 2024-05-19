@@ -14,4 +14,10 @@ A aplicação permite que os usuários insiram frases de texto em um campo de en
 
 Este projeto não só demonstra o uso prático de tecnologias avançadas de processamento de linguagem natural, mas também oferece uma ferramenta útil para a análise de sentimento em diferentes contextos, como mídias sociais, análise de feedback do cliente e muito mais.
 
+# Como rodar o projeto:
+Instale as dependências:
+- pip install streamlit
+- pip install transformers torch
+
+## Por fim execute o comando: **streamlit run app.py**
 ![Imagem](https://github.com/GabryelKadmo/Projeto-I.A/assets/65462410/198a6e6f-5f43-4135-8429-140a77d79f08)
