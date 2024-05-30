@@ -2,15 +2,14 @@ import streamlit as st
 from transformers import BertTokenizer, BertForSequenceClassification
 from torch.nn.functional import softmax
 import torch
-from transformers import AutoConfig
 
-# Carregar o modelo pré-treinado e o tokenizer
-st.set_page_config(page_title="Verificar Texto", page_icon="🧠", layout="centered")
+# Carregar o modelo e o tokenizer
+st.set_page_config(page_title="Verificar Sentimento", page_icon="🤖", layout="centered")
 model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForSequenceClassification.from_pretrained(model_name)
 
-# Definindo a função para classificar o sentimento
+# Definindo a função para classificar a intenção do texto
 def classify_sentiment(text):
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
     with torch.no_grad():
@@ -22,7 +21,7 @@ def classify_sentiment(text):
 
 # Criando a interface Streamlit
 st.title('Verificar Sentimento')
-user_input = st.text_area("Digite uma frase para analisar se é algo positivo, negativo ou neutro:", value="", height=150)
+user_input = st.text_area("Escreva um comentário para analisar se é algo positivo, negativo ou neutro:", value="", height=150)
 if st.button('Verificar texto'):
     sentiment = classify_sentiment(user_input)
     st.write(f"Essa frase é: **{sentiment}**")
